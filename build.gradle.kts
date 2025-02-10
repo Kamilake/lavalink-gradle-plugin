@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "dev.arbjerg"
-version = "1.0.16"
+version = "1.1.2"
 
 repositories {
     mavenCentral()
@@ -13,6 +13,10 @@ repositories {
 
 kotlin {
     jvmToolchain(11)
+}
+
+dependencies {
+    compileOnly(kotlin("gradle-plugin"))
 }
 
 gradlePlugin {
@@ -33,7 +37,7 @@ gradlePlugin {
 
 publishing {
     repositories {
-        maven("https://maven.arbjerg.dev/releases") {
+        maven("https://maven.lavalink.dev/releases") {
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
